@@ -1,0 +1,848 @@
+Greetings user,
+please enter input file location path
+(or name if in current directory)
+input.txt
+# create four investors
+	CREATION SUCCESS: Investor "Investor One" (invone) created [CASH: 1000]
+
+	CREATION SUCCESS: Investor "Investor Two" (invtwo) created [CASH: 1000]
+
+	CREATION SUCCESS: Investor "Investor Three" (invthree) created [CASH: 1000]
+
+	CREATION SUCCESS: Investor "Investor Four" (invfour) created [CASH: 0]
+
+# attempt to create duplicate investor
+	CREATION ERROR: Investor "invone" already exists.
+
+# create five cryptocurrencies
+	CREATION SUCCESS: Cryptocurrency "CRYPTO1" (CRY1) created [QUANTITY: 1000]
+
+	CREATION SUCCESS: Cryptocurrency "CRYPTO2" (CRY2) created [QUANTITY: 1000]
+
+	CREATION SUCCESS: Cryptocurrency "CRYPTO3" (CRY3) created [QUANTITY: 1000]
+
+	CREATION SUCCESS: Cryptocurrency "CRYPTO4" (CRY4) created [QUANTITY: 1000]
+
+	CREATION SUCCESS: Cryptocurrency "CRYPTO5" (CRY5) created [QUANTITY: 1000]
+
+# attempt to create duplicate cryptocurrency
+	CREATION ERROR: Cryptocurrency "CRY5" already exists.
+
+# successful mines
+	MINING SUCCESS:	"invone" mined  [500 CRY1]
+
+	MINING SUCCESS:	"invtwo" mined  [400 CRY1]
+
+	MINING SUCCESS:	"invtwo" mined  [10 CRY5]
+
+	MINING SUCCESS:	"invone" mined  [1000 CRY2]
+
+	MINING SUCCESS:	"invthree" mined  [100 CRY3]
+
+	MINING SUCCESS:	"invthree" mined  [200 CRY3]
+
+	MINING SUCCESS:	"invtwo" mined  [200 CRY3]
+
+	MINING SUCCESS:	"invone" mined  [10 CRY5]
+
+# investor not found
+	MINING ERROR: Investor "notfound" is not found.
+
+# currency not found
+	MINING ERROR: Cryptocurrency "CRY6" is not found.
+
+# insufficient funds - CRY4
+	MINING ERROR: Cryptocurrency "CRY4" has insufficient quantity.
+
+# insufficient funds - CRY1
+	MINING ERROR: Cryptocurrency "CRY1" has insufficient quantity.
+
+# trade - currency not found - CRY7
+	TRADING ERROR: At least one of the cryptocurrencies is not found.
+
+# trade - investor not found - invten
+	TRADING ERROR: At least one of the investors is not found.
+
+# trade - multiple not founds - only needs to detect one
+	TRADING ERROR: At least one of the investors is not found.
+
+# trade - insufficient funds for one investor - held
+	ERROR: Investor "invone" has insufficient "CRY1" to send.
+	TRADING ERROR - indicated above
+
+# trade - insufficient funds for one investor - not held
+	ERROR: Investor "invone" does not have any "CRY4"
+	TRADING ERROR - indicated above
+
+# trade - insufficient funds for both investors - held - only needs to detect one
+	ERROR: Investor "invone" has insufficient "CRY1" to send.
+	TRADING ERROR - indicated above
+
+# trade - insufficient funds for both investors - not held - only needs to detect one
+	ERROR: Investor "invone" does not have any "CRY4"
+	TRADING ERROR - indicated above
+
+# trade - insufficient CAD
+	ERROR: Investor "invtwo" has insufficient CAD to send.
+	TRADING ERROR - indicated above
+
+# trade - same trader
+	TRADING ERROR: Both traders are the same.
+
+# trade - multiple errors - only needs to report one
+	TRADING ERROR: At least one of the investors is not found.
+
+# successful trade - both cryptos, both new
+	TRADING SUCCESS: "invone" gives [100 CRY2] to "invtwo"
+	  and	"invtwo" gives [100 CRY3] to "invone"
+
+# successful trade - both cryptos, both existing
+	TRADING SUCCESS: "invone" gives [100 CRY1] to "invtwo"
+	  and	"invtwo" gives [5 CRY5] to "invone"
+
+# successful trade - one CAD - new currency
+	TRADING SUCCESS: "invone" gives [200 CRY1] to "invthree"
+	  and	"invthree" gives [500 CAD] to "invone"
+
+# successful trade - one CAD - existing currency
+	TRADING SUCCESS: "invone" gives [100 CRY1] to "invtwo"
+	  and	"invtwo" gives [500 CAD] to "invone"
+
+# successful trade - both cryptos same
+	TRADING SUCCESS: "invone" gives [100 CRY1] to "invtwo"
+	  and	"invtwo" gives [101 CRY1] to "invone"
+
+# some .. uh .. more trades.
+	TRADING SUCCESS: "invone" gives [101 CRY1] to "invtwo"
+	  and	"invtwo" gives [100 CRY1] to "invone"
+
+	TRADING SUCCESS: "invone" gives [100 CRY1] to "invtwo"
+	  and	"invtwo" gives [101 CRY1] to "invone"
+
+	TRADING SUCCESS: "invone" gives [101 CRY1] to "invtwo"
+	  and	"invtwo" gives [100 CRY1] to "invone"
+
+	TRADING SUCCESS: "invone" gives [100 CRY1] to "invtwo"
+	  and	"invtwo" gives [101 CRY1] to "invone"
+
+	TRADING SUCCESS: "invone" gives [101 CRY1] to "invtwo"
+	  and	"invtwo" gives [100 CRY1] to "invone"
+
+	TRADING SUCCESS: "invone" gives [100 CRY1] to "invtwo"
+	  and	"invtwo" gives [101 CRY1] to "invone"
+
+	TRADING SUCCESS: "invone" gives [101 CRY1] to "invtwo"
+	  and	"invtwo" gives [100 CRY1] to "invone"
+
+	TRADING SUCCESS: "invone" gives [100 CRY1] to "invtwo"
+	  and	"invtwo" gives [101 CRY1] to "invone"
+
+	TRADING SUCCESS: "invone" gives [101 CRY1] to "invtwo"
+	  and	"invtwo" gives [100 CRY1] to "invone"
+
+	TRADING SUCCESS: "invone" gives [100 CRY1] to "invtwo"
+	  and	"invtwo" gives [101 CRY1] to "invone"
+
+	TRADING SUCCESS: "invone" gives [101 CRY1] to "invtwo"
+	  and	"invtwo" gives [100 CRY1] to "invone"
+
+	TRADING SUCCESS: "invone" gives [100 CRY1] to "invtwo"
+	  and	"invtwo" gives [101 CRY1] to "invone"
+
+	TRADING SUCCESS: "invone" gives [101 CRY1] to "invtwo"
+	  and	"invtwo" gives [100 CRY1] to "invone"
+
+	TRADING SUCCESS: "invone" gives [100 CRY1] to "invtwo"
+	  and	"invtwo" gives [101 CRY1] to "invone"
+
+	TRADING SUCCESS: "invone" gives [101 CRY1] to "invtwo"
+	  and	"invtwo" gives [100 CRY1] to "invone"
+
+	TRADING SUCCESS: "invone" gives [100 CRY1] to "invtwo"
+	  and	"invtwo" gives [101 CRY1] to "invone"
+
+	TRADING SUCCESS: "invone" gives [101 CRY1] to "invtwo"
+	  and	"invtwo" gives [100 CRY1] to "invone"
+
+	TRADING SUCCESS: "invone" gives [100 CRY1] to "invtwo"
+	  and	"invtwo" gives [101 CRY1] to "invone"
+
+	TRADING SUCCESS: "invone" gives [101 CRY1] to "invtwo"
+	  and	"invtwo" gives [100 CRY1] to "invone"
+
+	TRADING SUCCESS: "invone" gives [100 CRY1] to "invtwo"
+	  and	"invtwo" gives [101 CRY1] to "invone"
+
+	TRADING SUCCESS: "invone" gives [101 CRY1] to "invtwo"
+	  and	"invtwo" gives [100 CRY1] to "invone"
+
+	TRADING SUCCESS: "invone" gives [100 CRY1] to "invtwo"
+	  and	"invtwo" gives [101 CRY1] to "invone"
+
+	TRADING SUCCESS: "invone" gives [101 CRY1] to "invtwo"
+	  and	"invtwo" gives [100 CRY1] to "invone"
+
+	TRADING SUCCESS: "invone" gives [100 CRY1] to "invtwo"
+	  and	"invtwo" gives [101 CRY1] to "invone"
+
+	TRADING SUCCESS: "invone" gives [101 CRY1] to "invtwo"
+	  and	"invtwo" gives [100 CRY1] to "invone"
+
+	TRADING SUCCESS: "invone" gives [100 CRY1] to "invtwo"
+	  and	"invtwo" gives [101 CRY1] to "invone"
+
+	TRADING SUCCESS: "invone" gives [101 CRY1] to "invtwo"
+	  and	"invtwo" gives [100 CRY1] to "invone"
+
+	TRADING SUCCESS: "invone" gives [100 CRY1] to "invtwo"
+	  and	"invtwo" gives [101 CRY1] to "invone"
+
+	TRADING SUCCESS: "invone" gives [101 CRY1] to "invtwo"
+	  and	"invtwo" gives [100 CRY1] to "invone"
+
+	TRADING SUCCESS: "invone" gives [100 CRY1] to "invtwo"
+	  and	"invtwo" gives [101 CRY1] to "invone"
+
+	TRADING SUCCESS: "invone" gives [101 CRY1] to "invtwo"
+	  and	"invtwo" gives [100 CRY1] to "invone"
+
+	TRADING SUCCESS: "invone" gives [100 CRY1] to "invtwo"
+	  and	"invtwo" gives [101 CRY1] to "invone"
+
+	TRADING SUCCESS: "invone" gives [101 CRY1] to "invtwo"
+	  and	"invtwo" gives [100 CRY1] to "invone"
+
+	TRADING SUCCESS: "invone" gives [100 CRY1] to "invtwo"
+	  and	"invtwo" gives [101 CRY1] to "invone"
+
+	TRADING SUCCESS: "invone" gives [101 CRY1] to "invtwo"
+	  and	"invtwo" gives [100 CRY1] to "invone"
+
+	TRADING SUCCESS: "invone" gives [100 CRY1] to "invtwo"
+	  and	"invtwo" gives [101 CRY1] to "invone"
+
+	TRADING SUCCESS: "invone" gives [101 CRY1] to "invtwo"
+	  and	"invtwo" gives [100 CRY1] to "invone"
+
+	TRADING SUCCESS: "invone" gives [100 CRY1] to "invtwo"
+	  and	"invtwo" gives [101 CRY1] to "invone"
+
+	TRADING SUCCESS: "invone" gives [101 CRY1] to "invtwo"
+	  and	"invtwo" gives [100 CRY1] to "invone"
+
+	TRADING SUCCESS: "invone" gives [100 CRY1] to "invtwo"
+	  and	"invtwo" gives [101 CRY1] to "invone"
+
+	TRADING SUCCESS: "invone" gives [101 CRY1] to "invtwo"
+	  and	"invtwo" gives [100 CRY1] to "invone"
+
+	TRADING SUCCESS: "invone" gives [100 CRY1] to "invtwo"
+	  and	"invtwo" gives [101 CRY1] to "invone"
+
+	TRADING SUCCESS: "invone" gives [101 CRY1] to "invtwo"
+	  and	"invtwo" gives [100 CRY1] to "invone"
+
+	TRADING SUCCESS: "invone" gives [100 CRY1] to "invtwo"
+	  and	"invtwo" gives [101 CRY1] to "invone"
+
+	TRADING SUCCESS: "invone" gives [101 CRY1] to "invtwo"
+	  and	"invtwo" gives [100 CRY1] to "invone"
+
+	TRADING SUCCESS: "invone" gives [100 CRY1] to "invtwo"
+	  and	"invtwo" gives [101 CRY1] to "invone"
+
+	TRADING SUCCESS: "invone" gives [101 CRY1] to "invtwo"
+	  and	"invtwo" gives [100 CRY1] to "invone"
+
+	TRADING SUCCESS: "invone" gives [100 CRY1] to "invtwo"
+	  and	"invtwo" gives [101 CRY1] to "invone"
+
+	TRADING SUCCESS: "invone" gives [101 CRY1] to "invtwo"
+	  and	"invtwo" gives [100 CRY1] to "invone"
+
+	TRADING SUCCESS: "invone" gives [100 CRY1] to "invtwo"
+	  and	"invtwo" gives [101 CRY1] to "invone"
+
+	TRADING SUCCESS: "invone" gives [101 CRY1] to "invtwo"
+	  and	"invtwo" gives [100 CRY1] to "invone"
+
+	TRADING SUCCESS: "invone" gives [100 CRY1] to "invtwo"
+	  and	"invtwo" gives [101 CRY1] to "invone"
+
+	TRADING SUCCESS: "invone" gives [101 CRY1] to "invtwo"
+	  and	"invtwo" gives [100 CRY1] to "invone"
+
+	TRADING SUCCESS: "invone" gives [100 CRY1] to "invtwo"
+	  and	"invtwo" gives [101 CRY1] to "invone"
+
+	TRADING SUCCESS: "invone" gives [101 CRY1] to "invtwo"
+	  and	"invtwo" gives [100 CRY1] to "invone"
+
+	TRADING SUCCESS: "invone" gives [100 CRY1] to "invtwo"
+	  and	"invtwo" gives [101 CRY1] to "invone"
+
+	TRADING SUCCESS: "invone" gives [101 CRY1] to "invtwo"
+	  and	"invtwo" gives [100 CRY1] to "invone"
+
+	TRADING SUCCESS: "invone" gives [100 CRY1] to "invtwo"
+	  and	"invtwo" gives [101 CRY1] to "invone"
+
+	TRADING SUCCESS: "invone" gives [101 CRY1] to "invtwo"
+	  and	"invtwo" gives [100 CRY1] to "invone"
+
+	TRADING SUCCESS: "invone" gives [100 CRY1] to "invtwo"
+	  and	"invtwo" gives [101 CRY1] to "invone"
+
+	TRADING SUCCESS: "invone" gives [101 CRY1] to "invtwo"
+	  and	"invtwo" gives [100 CRY1] to "invone"
+
+	TRADING SUCCESS: "invone" gives [100 CRY1] to "invtwo"
+	  and	"invtwo" gives [101 CRY1] to "invone"
+
+	TRADING SUCCESS: "invone" gives [101 CRY1] to "invtwo"
+	  and	"invtwo" gives [100 CRY1] to "invone"
+
+	TRADING SUCCESS: "invone" gives [100 CRY1] to "invtwo"
+	  and	"invtwo" gives [101 CRY1] to "invone"
+
+	TRADING SUCCESS: "invone" gives [101 CRY1] to "invtwo"
+	  and	"invtwo" gives [100 CRY1] to "invone"
+
+	TRADING SUCCESS: "invone" gives [100 CRY1] to "invtwo"
+	  and	"invtwo" gives [101 CRY1] to "invone"
+
+	TRADING SUCCESS: "invone" gives [101 CRY1] to "invtwo"
+	  and	"invtwo" gives [100 CRY1] to "invone"
+
+	TRADING SUCCESS: "invone" gives [100 CRY1] to "invtwo"
+	  and	"invtwo" gives [101 CRY1] to "invone"
+
+	TRADING SUCCESS: "invone" gives [101 CRY1] to "invtwo"
+	  and	"invtwo" gives [100 CRY1] to "invone"
+
+	TRADING SUCCESS: "invone" gives [100 CRY1] to "invtwo"
+	  and	"invtwo" gives [101 CRY1] to "invone"
+
+	TRADING SUCCESS: "invone" gives [101 CRY1] to "invtwo"
+	  and	"invtwo" gives [100 CRY1] to "invone"
+
+	TRADING SUCCESS: "invone" gives [100 CRY1] to "invtwo"
+	  and	"invtwo" gives [101 CRY1] to "invone"
+
+	TRADING SUCCESS: "invone" gives [101 CRY1] to "invtwo"
+	  and	"invtwo" gives [100 CRY1] to "invone"
+
+	TRADING SUCCESS: "invone" gives [100 CRY1] to "invtwo"
+	  and	"invtwo" gives [101 CRY1] to "invone"
+
+	TRADING SUCCESS: "invone" gives [101 CRY1] to "invtwo"
+	  and	"invtwo" gives [100 CRY1] to "invone"
+
+	TRADING SUCCESS: "invone" gives [100 CRY1] to "invtwo"
+	  and	"invtwo" gives [101 CRY1] to "invone"
+
+	TRADING SUCCESS: "invone" gives [101 CRY1] to "invtwo"
+	  and	"invtwo" gives [100 CRY1] to "invone"
+
+	TRADING SUCCESS: "invone" gives [100 CRY1] to "invtwo"
+	  and	"invtwo" gives [101 CRY1] to "invone"
+
+	TRADING SUCCESS: "invone" gives [101 CRY1] to "invtwo"
+	  and	"invtwo" gives [100 CRY1] to "invone"
+
+	TRADING SUCCESS: "invone" gives [100 CRY1] to "invtwo"
+	  and	"invtwo" gives [101 CRY1] to "invone"
+
+	TRADING SUCCESS: "invone" gives [101 CRY1] to "invtwo"
+	  and	"invtwo" gives [100 CRY1] to "invone"
+
+	TRADING SUCCESS: "invone" gives [100 CRY1] to "invtwo"
+	  and	"invtwo" gives [101 CRY1] to "invone"
+
+	TRADING SUCCESS: "invone" gives [101 CRY1] to "invtwo"
+	  and	"invtwo" gives [100 CRY1] to "invone"
+
+	TRADING SUCCESS: "invone" gives [100 CRY1] to "invtwo"
+	  and	"invtwo" gives [101 CRY1] to "invone"
+
+	TRADING SUCCESS: "invone" gives [101 CRY1] to "invtwo"
+	  and	"invtwo" gives [100 CRY1] to "invone"
+
+	TRADING SUCCESS: "invone" gives [100 CRY1] to "invtwo"
+	  and	"invtwo" gives [101 CRY1] to "invone"
+
+	TRADING SUCCESS: "invone" gives [101 CRY1] to "invtwo"
+	  and	"invtwo" gives [100 CRY1] to "invone"
+
+	TRADING SUCCESS: "invone" gives [100 CRY1] to "invtwo"
+	  and	"invtwo" gives [101 CRY1] to "invone"
+
+	TRADING SUCCESS: "invone" gives [101 CRY1] to "invtwo"
+	  and	"invtwo" gives [100 CRY1] to "invone"
+
+	TRADING SUCCESS: "invone" gives [100 CRY1] to "invtwo"
+	  and	"invtwo" gives [101 CRY1] to "invone"
+
+	TRADING SUCCESS: "invone" gives [101 CRY1] to "invtwo"
+	  and	"invtwo" gives [100 CRY1] to "invone"
+
+	TRADING SUCCESS: "invone" gives [100 CRY1] to "invtwo"
+	  and	"invtwo" gives [101 CRY1] to "invone"
+
+	TRADING SUCCESS: "invone" gives [101 CRY1] to "invtwo"
+	  and	"invtwo" gives [100 CRY1] to "invone"
+
+	TRADING SUCCESS: "invone" gives [100 CRY1] to "invtwo"
+	  and	"invtwo" gives [101 CRY1] to "invone"
+
+	TRADING SUCCESS: "invone" gives [101 CRY1] to "invtwo"
+	  and	"invtwo" gives [100 CRY1] to "invone"
+
+	TRADING SUCCESS: "invone" gives [100 CRY1] to "invtwo"
+	  and	"invtwo" gives [101 CRY1] to "invone"
+
+	TRADING SUCCESS: "invone" gives [101 CRY1] to "invtwo"
+	  and	"invtwo" gives [100 CRY1] to "invone"
+
+	TRADING SUCCESS: "invone" gives [100 CRY1] to "invtwo"
+	  and	"invtwo" gives [101 CRY1] to "invone"
+
+	TRADING SUCCESS: "invone" gives [101 CRY1] to "invtwo"
+	  and	"invtwo" gives [100 CRY1] to "invone"
+
+	TRADING SUCCESS: "invone" gives [100 CRY1] to "invtwo"
+	  and	"invtwo" gives [101 CRY1] to "invone"
+
+	TRADING SUCCESS: "invone" gives [101 CRY1] to "invtwo"
+	  and	"invtwo" gives [100 CRY1] to "invone"
+
+	TRADING SUCCESS: "invone" gives [100 CRY1] to "invtwo"
+	  and	"invtwo" gives [101 CRY1] to "invone"
+
+	TRADING SUCCESS: "invone" gives [101 CRY1] to "invtwo"
+	  and	"invtwo" gives [100 CRY1] to "invone"
+
+	TRADING SUCCESS: "invone" gives [100 CRY1] to "invtwo"
+	  and	"invtwo" gives [101 CRY1] to "invone"
+
+	TRADING SUCCESS: "invone" gives [101 CRY1] to "invtwo"
+	  and	"invtwo" gives [100 CRY1] to "invone"
+
+	TRADING SUCCESS: "invone" gives [100 CRY1] to "invtwo"
+	  and	"invtwo" gives [101 CRY1] to "invone"
+
+	TRADING SUCCESS: "invone" gives [101 CRY1] to "invtwo"
+	  and	"invtwo" gives [100 CRY1] to "invone"
+
+	TRADING SUCCESS: "invone" gives [100 CRY1] to "invtwo"
+	  and	"invtwo" gives [101 CRY1] to "invone"
+
+	TRADING SUCCESS: "invone" gives [101 CRY1] to "invtwo"
+	  and	"invtwo" gives [100 CRY1] to "invone"
+
+	TRADING SUCCESS: "invone" gives [100 CRY1] to "invtwo"
+	  and	"invtwo" gives [101 CRY1] to "invone"
+
+	TRADING SUCCESS: "invone" gives [101 CRY1] to "invtwo"
+	  and	"invtwo" gives [100 CRY1] to "invone"
+
+	TRADING SUCCESS: "invone" gives [100 CRY1] to "invtwo"
+	  and	"invtwo" gives [101 CRY1] to "invone"
+
+	TRADING SUCCESS: "invone" gives [101 CRY1] to "invtwo"
+	  and	"invtwo" gives [100 CRY1] to "invone"
+
+	TRADING SUCCESS: "invone" gives [100 CRY1] to "invtwo"
+	  and	"invtwo" gives [101 CRY1] to "invone"
+
+	TRADING SUCCESS: "invone" gives [101 CRY1] to "invtwo"
+	  and	"invtwo" gives [100 CRY1] to "invone"
+
+	TRADING SUCCESS: "invone" gives [100 CRY1] to "invtwo"
+	  and	"invtwo" gives [101 CRY1] to "invone"
+
+	TRADING SUCCESS: "invone" gives [101 CRY1] to "invtwo"
+	  and	"invtwo" gives [100 CRY1] to "invone"
+
+	TRADING SUCCESS: "invone" gives [100 CRY1] to "invtwo"
+	  and	"invtwo" gives [101 CRY1] to "invone"
+
+	TRADING SUCCESS: "invone" gives [101 CRY1] to "invtwo"
+	  and	"invtwo" gives [100 CRY1] to "invone"
+
+	TRADING SUCCESS: "invone" gives [100 CRY1] to "invtwo"
+	  and	"invtwo" gives [101 CRY1] to "invone"
+
+	TRADING SUCCESS: "invone" gives [101 CRY1] to "invtwo"
+	  and	"invtwo" gives [100 CRY1] to "invone"
+
+	TRADING SUCCESS: "invone" gives [100 CRY1] to "invtwo"
+	  and	"invtwo" gives [101 CRY1] to "invone"
+
+	TRADING SUCCESS: "invone" gives [101 CRY1] to "invtwo"
+	  and	"invtwo" gives [100 CRY1] to "invone"
+
+	TRADING SUCCESS: "invone" gives [100 CRY1] to "invtwo"
+	  and	"invtwo" gives [101 CRY1] to "invone"
+
+	TRADING SUCCESS: "invone" gives [101 CRY1] to "invtwo"
+	  and	"invtwo" gives [100 CRY1] to "invone"
+
+	TRADING SUCCESS: "invone" gives [100 CRY1] to "invtwo"
+	  and	"invtwo" gives [101 CRY1] to "invone"
+
+	TRADING SUCCESS: "invone" gives [101 CRY1] to "invtwo"
+	  and	"invtwo" gives [100 CRY1] to "invone"
+
+	TRADING SUCCESS: "invone" gives [100 CRY1] to "invtwo"
+	  and	"invtwo" gives [101 CRY1] to "invone"
+
+	TRADING SUCCESS: "invone" gives [101 CRY1] to "invtwo"
+	  and	"invtwo" gives [100 CRY1] to "invone"
+
+	TRADING SUCCESS: "invone" gives [100 CRY1] to "invtwo"
+	  and	"invtwo" gives [101 CRY1] to "invone"
+
+	TRADING SUCCESS: "invone" gives [101 CRY1] to "invtwo"
+	  and	"invtwo" gives [100 CRY1] to "invone"
+
+	TRADING SUCCESS: "invone" gives [100 CRY1] to "invtwo"
+	  and	"invtwo" gives [101 CRY1] to "invone"
+
+	TRADING SUCCESS: "invone" gives [101 CRY1] to "invtwo"
+	  and	"invtwo" gives [100 CRY1] to "invone"
+
+	TRADING SUCCESS: "invone" gives [100 CRY1] to "invtwo"
+	  and	"invtwo" gives [101 CRY1] to "invone"
+
+	TRADING SUCCESS: "invone" gives [101 CRY1] to "invtwo"
+	  and	"invtwo" gives [100 CRY1] to "invone"
+
+	TRADING SUCCESS: "invone" gives [100 CRY1] to "invtwo"
+	  and	"invtwo" gives [101 CRY1] to "invone"
+
+	TRADING SUCCESS: "invone" gives [101 CRY1] to "invtwo"
+	  and	"invtwo" gives [100 CRY1] to "invone"
+
+	TRADING SUCCESS: "invone" gives [100 CRY1] to "invtwo"
+	  and	"invtwo" gives [101 CRY1] to "invone"
+
+	TRADING SUCCESS: "invone" gives [101 CRY1] to "invtwo"
+	  and	"invtwo" gives [100 CRY1] to "invone"
+
+	TRADING SUCCESS: "invone" gives [100 CRY1] to "invtwo"
+	  and	"invtwo" gives [101 CRY1] to "invone"
+
+	TRADING SUCCESS: "invone" gives [101 CRY1] to "invtwo"
+	  and	"invtwo" gives [100 CRY1] to "invone"
+
+	TRADING SUCCESS: "invone" gives [100 CRY1] to "invtwo"
+	  and	"invtwo" gives [101 CRY1] to "invone"
+
+	TRADING SUCCESS: "invone" gives [101 CRY1] to "invtwo"
+	  and	"invtwo" gives [100 CRY1] to "invone"
+
+	TRADING SUCCESS: "invone" gives [100 CRY1] to "invtwo"
+	  and	"invtwo" gives [101 CRY1] to "invone"
+
+	TRADING SUCCESS: "invone" gives [101 CRY1] to "invtwo"
+	  and	"invtwo" gives [100 CRY1] to "invone"
+
+	TRADING SUCCESS: "invone" gives [100 CRY1] to "invtwo"
+	  and	"invtwo" gives [101 CRY1] to "invone"
+
+	TRADING SUCCESS: "invone" gives [101 CRY1] to "invtwo"
+	  and	"invtwo" gives [100 CRY1] to "invone"
+
+	TRADING SUCCESS: "invone" gives [100 CRY1] to "invtwo"
+	  and	"invtwo" gives [101 CRY1] to "invone"
+
+	TRADING SUCCESS: "invone" gives [101 CRY1] to "invtwo"
+	  and	"invtwo" gives [100 CRY1] to "invone"
+
+	TRADING SUCCESS: "invone" gives [100 CRY1] to "invtwo"
+	  and	"invtwo" gives [101 CRY1] to "invone"
+
+	TRADING SUCCESS: "invone" gives [101 CRY1] to "invtwo"
+	  and	"invtwo" gives [100 CRY1] to "invone"
+
+	TRADING SUCCESS: "invone" gives [100 CRY1] to "invtwo"
+	  and	"invtwo" gives [101 CRY1] to "invone"
+
+	TRADING SUCCESS: "invone" gives [101 CRY1] to "invtwo"
+	  and	"invtwo" gives [100 CRY1] to "invone"
+
+	TRADING SUCCESS: "invone" gives [100 CRY1] to "invtwo"
+	  and	"invtwo" gives [101 CRY1] to "invone"
+
+	TRADING SUCCESS: "invone" gives [101 CRY1] to "invtwo"
+	  and	"invtwo" gives [100 CRY1] to "invone"
+
+	TRADING SUCCESS: "invone" gives [100 CRY1] to "invtwo"
+	  and	"invtwo" gives [101 CRY1] to "invone"
+
+	TRADING SUCCESS: "invone" gives [101 CRY1] to "invtwo"
+	  and	"invtwo" gives [100 CRY1] to "invone"
+
+	TRADING SUCCESS: "invone" gives [100 CRY1] to "invtwo"
+	  and	"invtwo" gives [101 CRY1] to "invone"
+
+	TRADING SUCCESS: "invone" gives [101 CRY1] to "invtwo"
+	  and	"invtwo" gives [100 CRY1] to "invone"
+
+	TRADING SUCCESS: "invone" gives [100 CRY1] to "invtwo"
+	  and	"invtwo" gives [101 CRY1] to "invone"
+
+# successful trade - investor is traded out of a currency
+	TRADING SUCCESS: "invone" gives [100 CRY1] to "invthree"
+	  and	"invthree" gives [300 CRY3] to "invone"
+
+# nonexistent crypto report
+	REPORT ERROR: Cryptocurrency "CRY9" is not found.
+
+# report all cryptos
+	 ______________________________________________________________________
+	| REPORT for CRYPTO1 (CRY1) 	 QUANTITY: 100
+	|-------<TRANSACTIONS>-------------------------------------------------
+	|	 Transaction: [ MINE invone CRY1 500 ]
+	|	 Transaction: [ MINE invtwo CRY1 400 ]
+	|	 Transaction: [ TRADE invone invtwo CRY1 100 CRY5 5 ]
+	|	 Transaction: [ TRADE invone invthree CRY1 200 CAD 500 ]
+	|	 Transaction: [ TRADE invone invtwo CRY1 100 CAD 500 ]
+	|	 Transaction: [ TRADE invone invtwo CRY1 100 CRY1 101 ]
+	|	 Transaction: [ TRADE invone invtwo CRY1 101 CRY1 100 ]
+	|	 Transaction: [ TRADE invone invtwo CRY1 100 CRY1 101 ]
+	|	 Transaction: [ TRADE invone invtwo CRY1 101 CRY1 100 ]
+	|	 Transaction: [ TRADE invone invtwo CRY1 100 CRY1 101 ]
+	|	 Transaction: [ TRADE invone invtwo CRY1 101 CRY1 100 ]
+	|	 Transaction: [ TRADE invone invtwo CRY1 100 CRY1 101 ]
+	|	 Transaction: [ TRADE invone invtwo CRY1 101 CRY1 100 ]
+	|	 Transaction: [ TRADE invone invtwo CRY1 100 CRY1 101 ]
+	|	 Transaction: [ TRADE invone invtwo CRY1 101 CRY1 100 ]
+	|	 Transaction: [ TRADE invone invtwo CRY1 100 CRY1 101 ]
+	|	 Transaction: [ TRADE invone invtwo CRY1 101 CRY1 100 ]
+	|	 Transaction: [ TRADE invone invtwo CRY1 100 CRY1 101 ]
+	|	 Transaction: [ TRADE invone invtwo CRY1 101 CRY1 100 ]
+	|	 Transaction: [ TRADE invone invtwo CRY1 100 CRY1 101 ]
+	|	 Transaction: [ TRADE invone invtwo CRY1 101 CRY1 100 ]
+	|	 Transaction: [ TRADE invone invtwo CRY1 100 CRY1 101 ]
+	|	 Transaction: [ TRADE invone invtwo CRY1 101 CRY1 100 ]
+	|	 Transaction: [ TRADE invone invtwo CRY1 100 CRY1 101 ]
+	|	 Transaction: [ TRADE invone invtwo CRY1 101 CRY1 100 ]
+	|	 Transaction: [ TRADE invone invtwo CRY1 100 CRY1 101 ]
+	|	 Transaction: [ TRADE invone invtwo CRY1 101 CRY1 100 ]
+	|	 Transaction: [ TRADE invone invtwo CRY1 100 CRY1 101 ]
+	|	 Transaction: [ TRADE invone invtwo CRY1 101 CRY1 100 ]
+	|	 Transaction: [ TRADE invone invtwo CRY1 100 CRY1 101 ]
+	|	 Transaction: [ TRADE invone invtwo CRY1 101 CRY1 100 ]
+	|	 Transaction: [ TRADE invone invtwo CRY1 100 CRY1 101 ]
+	|	 Transaction: [ TRADE invone invtwo CRY1 101 CRY1 100 ]
+	|	 Transaction: [ TRADE invone invtwo CRY1 100 CRY1 101 ]
+	|	 Transaction: [ TRADE invone invtwo CRY1 101 CRY1 100 ]
+	|	 Transaction: [ TRADE invone invtwo CRY1 100 CRY1 101 ]
+	|	 Transaction: [ TRADE invone invtwo CRY1 101 CRY1 100 ]
+	|	 Transaction: [ TRADE invone invtwo CRY1 100 CRY1 101 ]
+	|	 Transaction: [ TRADE invone invtwo CRY1 101 CRY1 100 ]
+	|	 Transaction: [ TRADE invone invtwo CRY1 100 CRY1 101 ]
+	|	 Transaction: [ TRADE invone invtwo CRY1 101 CRY1 100 ]
+	|	 Transaction: [ TRADE invone invtwo CRY1 100 CRY1 101 ]
+	|	 Transaction: [ TRADE invone invtwo CRY1 101 CRY1 100 ]
+	|	 Transaction: [ TRADE invone invtwo CRY1 100 CRY1 101 ]
+	|	 Transaction: [ TRADE invone invtwo CRY1 101 CRY1 100 ]
+	|	 Transaction: [ TRADE invone invtwo CRY1 100 CRY1 101 ]
+	|	 Transaction: [ TRADE invone invtwo CRY1 101 CRY1 100 ]
+	|	 Transaction: [ TRADE invone invtwo CRY1 100 CRY1 101 ]
+	|	 Transaction: [ TRADE invone invtwo CRY1 101 CRY1 100 ]
+	|	 Transaction: [ TRADE invone invtwo CRY1 100 CRY1 101 ]
+	|	 Transaction: [ TRADE invone invtwo CRY1 101 CRY1 100 ]
+	|	 Transaction: [ TRADE invone invtwo CRY1 100 CRY1 101 ]
+	|	 Transaction: [ TRADE invone invtwo CRY1 101 CRY1 100 ]
+	|	 Transaction: [ TRADE invone invtwo CRY1 100 CRY1 101 ]
+	|	 Transaction: [ TRADE invone invtwo CRY1 101 CRY1 100 ]
+	|	 Transaction: [ TRADE invone invtwo CRY1 100 CRY1 101 ]
+	|	 Transaction: [ TRADE invone invtwo CRY1 101 CRY1 100 ]
+	|	 Transaction: [ TRADE invone invtwo CRY1 100 CRY1 101 ]
+	|	 Transaction: [ TRADE invone invtwo CRY1 101 CRY1 100 ]
+	|	 Transaction: [ TRADE invone invtwo CRY1 100 CRY1 101 ]
+	|	 Transaction: [ TRADE invone invtwo CRY1 101 CRY1 100 ]
+	|	 Transaction: [ TRADE invone invtwo CRY1 100 CRY1 101 ]
+	|	 Transaction: [ TRADE invone invtwo CRY1 101 CRY1 100 ]
+	|	 Transaction: [ TRADE invone invtwo CRY1 100 CRY1 101 ]
+	|	 Transaction: [ TRADE invone invtwo CRY1 101 CRY1 100 ]
+	|	 Transaction: [ TRADE invone invtwo CRY1 100 CRY1 101 ]
+	|	 Transaction: [ TRADE invone invtwo CRY1 101 CRY1 100 ]
+	|	 Transaction: [ TRADE invone invtwo CRY1 100 CRY1 101 ]
+	|	 Transaction: [ TRADE invone invtwo CRY1 101 CRY1 100 ]
+	|	 Transaction: [ TRADE invone invtwo CRY1 100 CRY1 101 ]
+	|	 Transaction: [ TRADE invone invtwo CRY1 101 CRY1 100 ]
+	|	 Transaction: [ TRADE invone invtwo CRY1 100 CRY1 101 ]
+	|	 Transaction: [ TRADE invone invtwo CRY1 101 CRY1 100 ]
+	|	 Transaction: [ TRADE invone invtwo CRY1 100 CRY1 101 ]
+	|	 Transaction: [ TRADE invone invtwo CRY1 101 CRY1 100 ]
+	|	 Transaction: [ TRADE invone invtwo CRY1 100 CRY1 101 ]
+	|	 Transaction: [ TRADE invone invtwo CRY1 101 CRY1 100 ]
+	|	 Transaction: [ TRADE invone invtwo CRY1 100 CRY1 101 ]
+	|	 Transaction: [ TRADE invone invtwo CRY1 101 CRY1 100 ]
+	|	 Transaction: [ TRADE invone invtwo CRY1 100 CRY1 101 ]
+	|	 Transaction: [ TRADE invone invtwo CRY1 101 CRY1 100 ]
+	|	 Transaction: [ TRADE invone invtwo CRY1 100 CRY1 101 ]
+	|	 Transaction: [ TRADE invone invtwo CRY1 101 CRY1 100 ]
+	|	 Transaction: [ TRADE invone invtwo CRY1 100 CRY1 101 ]
+	|	 Transaction: [ TRADE invone invtwo CRY1 101 CRY1 100 ]
+	|	 Transaction: [ TRADE invone invtwo CRY1 100 CRY1 101 ]
+	|	 Transaction: [ TRADE invone invtwo CRY1 101 CRY1 100 ]
+	|	 Transaction: [ TRADE invone invtwo CRY1 100 CRY1 101 ]
+	|	 Transaction: [ TRADE invone invtwo CRY1 101 CRY1 100 ]
+	|	 Transaction: [ TRADE invone invtwo CRY1 100 CRY1 101 ]
+	|	 Transaction: [ TRADE invone invtwo CRY1 101 CRY1 100 ]
+	|	 Transaction: [ TRADE invone invtwo CRY1 100 CRY1 101 ]
+	|	 Transaction: [ TRADE invone invtwo CRY1 101 CRY1 100 ]
+	|	 Transaction: [ TRADE invone invtwo CRY1 100 CRY1 101 ]
+	|	 Transaction: [ TRADE invone invtwo CRY1 101 CRY1 100 ]
+	|	 Transaction: [ TRADE invone invtwo CRY1 100 CRY1 101 ]
+	|	 Transaction: [ TRADE invone invtwo CRY1 101 CRY1 100 ]
+	|	 Transaction: [ TRADE invone invtwo CRY1 100 CRY1 101 ]
+	|	 Transaction: [ TRADE invone invtwo CRY1 101 CRY1 100 ]
+	|	 Transaction: [ TRADE invone invtwo CRY1 100 CRY1 101 ]
+	|	 Transaction: [ TRADE invone invtwo CRY1 101 CRY1 100 ]
+	|	 Transaction: [ TRADE invone invtwo CRY1 100 CRY1 101 ]
+	|	 Transaction: [ TRADE invone invtwo CRY1 101 CRY1 100 ]
+	|	 Transaction: [ TRADE invone invtwo CRY1 100 CRY1 101 ]
+	|	 Transaction: [ TRADE invone invtwo CRY1 101 CRY1 100 ]
+	|	 Transaction: [ TRADE invone invtwo CRY1 100 CRY1 101 ]
+	|	 Transaction: [ TRADE invone invtwo CRY1 101 CRY1 100 ]
+	|	 Transaction: [ TRADE invone invtwo CRY1 100 CRY1 101 ]
+	|	 Transaction: [ TRADE invone invtwo CRY1 101 CRY1 100 ]
+	|	 Transaction: [ TRADE invone invtwo CRY1 100 CRY1 101 ]
+	|	 Transaction: [ TRADE invone invtwo CRY1 101 CRY1 100 ]
+	|	 Transaction: [ TRADE invone invtwo CRY1 100 CRY1 101 ]
+	|	 Transaction: [ TRADE invone invtwo CRY1 101 CRY1 100 ]
+	|	 Transaction: [ TRADE invone invtwo CRY1 100 CRY1 101 ]
+	|	 Transaction: [ TRADE invone invtwo CRY1 101 CRY1 100 ]
+	|	 Transaction: [ TRADE invone invtwo CRY1 100 CRY1 101 ]
+	|	 Transaction: [ TRADE invone invtwo CRY1 101 CRY1 100 ]
+	|	 Transaction: [ TRADE invone invtwo CRY1 100 CRY1 101 ]
+	|	 Transaction: [ TRADE invone invtwo CRY1 101 CRY1 100 ]
+	|	 Transaction: [ TRADE invone invtwo CRY1 100 CRY1 101 ]
+	|	 Transaction: [ TRADE invone invtwo CRY1 101 CRY1 100 ]
+	|	 Transaction: [ TRADE invone invtwo CRY1 100 CRY1 101 ]
+	|	 Transaction: [ TRADE invone invtwo CRY1 101 CRY1 100 ]
+	|	 Transaction: [ TRADE invone invtwo CRY1 100 CRY1 101 ]
+	|	 Transaction: [ TRADE invone invtwo CRY1 101 CRY1 100 ]
+	|	 Transaction: [ TRADE invone invtwo CRY1 100 CRY1 101 ]
+	|	 Transaction: [ TRADE invone invtwo CRY1 101 CRY1 100 ]
+	|	 Transaction: [ TRADE invone invtwo CRY1 100 CRY1 101 ]
+	|	 Transaction: [ TRADE invone invtwo CRY1 101 CRY1 100 ]
+	|	 Transaction: [ TRADE invone invtwo CRY1 100 CRY1 101 ]
+	|	 Transaction: [ TRADE invone invtwo CRY1 101 CRY1 100 ]
+	|	 Transaction: [ TRADE invone invtwo CRY1 100 CRY1 101 ]
+	|	 Transaction: [ TRADE invone invtwo CRY1 101 CRY1 100 ]
+	|	 Transaction: [ TRADE invone invtwo CRY1 100 CRY1 101 ]
+	|	 Transaction: [ TRADE invone invtwo CRY1 101 CRY1 100 ]
+	|	 Transaction: [ TRADE invone invtwo CRY1 100 CRY1 101 ]
+	|	 Transaction: [ TRADE invone invtwo CRY1 101 CRY1 100 ]
+	|	 Transaction: [ TRADE invone invtwo CRY1 100 CRY1 101 ]
+	|	 Transaction: [ TRADE invone invtwo CRY1 101 CRY1 100 ]
+	|	 Transaction: [ TRADE invone invtwo CRY1 100 CRY1 101 ]
+	|	 Transaction: [ TRADE invone invtwo CRY1 101 CRY1 100 ]
+	|	 Transaction: [ TRADE invone invtwo CRY1 100 CRY1 101 ]
+	|	 Transaction: [ TRADE invone invtwo CRY1 101 CRY1 100 ]
+	|	 Transaction: [ TRADE invone invtwo CRY1 100 CRY1 101 ]
+	|	 Transaction: [ TRADE invone invtwo CRY1 101 CRY1 100 ]
+	|	 Transaction: [ TRADE invone invtwo CRY1 100 CRY1 101 ]
+	|	 Transaction: [ TRADE invone invtwo CRY1 101 CRY1 100 ]
+	|	 Transaction: [ TRADE invone invtwo CRY1 100 CRY1 101 ]
+	|	 Transaction: [ TRADE invone invtwo CRY1 101 CRY1 100 ]
+	|	 Transaction: [ TRADE invone invtwo CRY1 100 CRY1 101 ]
+	|	 Transaction: [ TRADE invone invtwo CRY1 101 CRY1 100 ]
+	|	 Transaction: [ TRADE invone invtwo CRY1 100 CRY1 101 ]
+	|	 Transaction: [ TRADE invone invtwo CRY1 101 CRY1 100 ]
+	|	 Transaction: [ TRADE invone invtwo CRY1 100 CRY1 101 ]
+	|	 Transaction: [ TRADE invone invtwo CRY1 101 CRY1 100 ]
+	|	 Transaction: [ TRADE invone invtwo CRY1 100 CRY1 101 ]
+	|	 Transaction: [ TRADE invone invtwo CRY1 101 CRY1 100 ]
+	|	 Transaction: [ TRADE invone invtwo CRY1 100 CRY1 101 ]
+	|	 Transaction: [ TRADE invone invtwo CRY1 101 CRY1 100 ]
+	|	 Transaction: [ TRADE invone invtwo CRY1 100 CRY1 101 ]
+	|	 Transaction: [ TRADE invone invtwo CRY1 101 CRY1 100 ]
+	|	 Transaction: [ TRADE invone invtwo CRY1 100 CRY1 101 ]
+	|	 Transaction: [ TRADE invone invtwo CRY1 101 CRY1 100 ]
+	|	 Transaction: [ TRADE invone invtwo CRY1 100 CRY1 101 ]
+	|	 Transaction: [ TRADE invone invtwo CRY1 101 CRY1 100 ]
+	|	 Transaction: [ TRADE invone invtwo CRY1 100 CRY1 101 ]
+	|	 Transaction: [ TRADE invone invthree CRY1 100 CRY3 300 ]
+	| 		 VERIFICATION of "CRY1": SUCCESS
+	|______________________________________________________________________|
+
+	 ______________________________________________________________________
+	| REPORT for CRYPTO2 (CRY2) 	 QUANTITY: 0
+	|-------<TRANSACTIONS>-------------------------------------------------
+	|	 Transaction: [ MINE invone CRY2 1000 ]
+	|	 Transaction: [ TRADE invone invtwo CRY2 100 CRY3 100 ]
+	| 		 VERIFICATION of "CRY2": SUCCESS
+	|______________________________________________________________________|
+
+	 ______________________________________________________________________
+	| REPORT for CRYPTO3 (CRY3) 	 QUANTITY: 500
+	|-------<TRANSACTIONS>-------------------------------------------------
+	|	 Transaction: [ MINE invthree CRY3 100 ]
+	|	 Transaction: [ MINE invthree CRY3 200 ]
+	|	 Transaction: [ MINE invtwo CRY3 200 ]
+	|	 Transaction: [ TRADE invone invtwo CRY2 100 CRY3 100 ]
+	|	 Transaction: [ TRADE invone invthree CRY1 100 CRY3 300 ]
+	| 		 VERIFICATION of "CRY3": SUCCESS
+	|______________________________________________________________________|
+
+	 ______________________________________________________________________
+	| REPORT for CRYPTO4 (CRY4) 	 QUANTITY: 1000
+	|-------<TRANSACTIONS>-------------------------------------------------
+	| 		 VERIFICATION of "CRY4": SUCCESS
+	|______________________________________________________________________|
+
+	 ______________________________________________________________________
+	| REPORT for CRYPTO5 (CRY5) 	 QUANTITY: 980
+	|-------<TRANSACTIONS>-------------------------------------------------
+	|	 Transaction: [ MINE invtwo CRY5 10 ]
+	|	 Transaction: [ MINE invone CRY5 10 ]
+	|	 Transaction: [ TRADE invone invtwo CRY1 100 CRY5 5 ]
+	| 		 VERIFICATION of "CRY5": SUCCESS
+	|______________________________________________________________________|
+
+# nonexistent report investor
+	REPORT ERROR: Investor "invteen" is not found.
+
+# report all investors
+	 _______________________________________________________________________
+	| PORTFOLIO of Investor One	   ID: invone	   CASH: [2000 CAD] 	|
+	|-------<HOLDINGS>------------------------------------------------------|
+	|	CRYPTO3 (CRY3) 	 QUANTITY: 400
+	|	CRYPTO5 (CRY5) 	 QUANTITY: 15
+	|	CRYPTO2 (CRY2) 	 QUANTITY: 900
+	|	CRYPTO1 (CRY1) 	 QUANTITY: 1
+	|_______________________________________________________________________|
+
+	 _______________________________________________________________________
+	| PORTFOLIO of Investor Two	   ID: invtwo	   CASH: [500 CAD] 	|
+	|-------<HOLDINGS>------------------------------------------------------|
+	|	CRYPTO2 (CRY2) 	 QUANTITY: 100
+	|	CRYPTO3 (CRY3) 	 QUANTITY: 100
+	|	CRYPTO5 (CRY5) 	 QUANTITY: 5
+	|	CRYPTO1 (CRY1) 	 QUANTITY: 599
+	|_______________________________________________________________________|
+
+	 _______________________________________________________________________
+	| PORTFOLIO of Investor Three	   ID: invthree	   CASH: [500 CAD] 	|
+	|-------<HOLDINGS>------------------------------------------------------|
+	|	CRYPTO1 (CRY1) 	 QUANTITY: 300
+	|	CRYPTO3 (CRY3) 	 QUANTITY: 0
+	|_______________________________________________________________________|
+
+	 _______________________________________________________________________
+	| PORTFOLIO of Investor Four	   ID: invfour	   CASH: [0 CAD] 	|
+	|-------<HOLDINGS>------------------------------------------------------|
+	|_______________________________________________________________________|
+
+# END
+DONE
+
+Program ended successfully.

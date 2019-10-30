@@ -1,0 +1,25 @@
+#Introducing investors and currencies
+NEW Willy Wanks willwank 1000
+NEW Billy Banks billbank 5000
+CRYPTO Bitcoin BTC 10000
+CRYPTO Ethereum ETH 10000
+
+REPORT willwank
+REPORT billbank
+
+
+MINE willwank BTC 1000
+MINE billbank ETH 5000
+
+REPORT willwank
+REPORT billbank
+
+TRADE willwank billbank BTC 500 ETH 1000
+TRADE willwank billbank CAD 500 CAD 1000
+
+REPORT willwank
+REPORT billbank
+
+CRYPORT BTC
+CRYPORT ETH
+END
